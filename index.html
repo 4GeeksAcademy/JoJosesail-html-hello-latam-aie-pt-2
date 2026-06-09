@@ -104,7 +104,7 @@
 						<article class="slide s1" aria-label="Dragon de viento sobre espalda completa">
 							<img
 								class="slide-image"
-								src="assets/dragon-viento.svg"
+								src="assets/dragon.png"
 								alt="Ilustracion de tattoo estilo dragon japones en movimiento"
 							/>
 							<div class="slide-content">
@@ -115,7 +115,7 @@
 						<article class="slide s2" aria-label="Koi ascendente sobre media manga">
 							<img
 								class="slide-image"
-								src="assets/koi-ascendente.svg"
+								src="assets/pez koi.png"
 								alt="Ilustracion de tattoo koi ascendente entre olas"
 							/>
 							<div class="slide-content">
@@ -126,7 +126,7 @@
 						<article class="slide s3" aria-label="Mascara hannya con peonias en antebrazo">
 							<img
 								class="slide-image"
-								src="assets/hannya-peonias.svg"
+								src="assets/hannya.png"
 								alt="Ilustracion de tattoo mascara hannya con peonias tradicionales"
 							/>
 							<div class="slide-content">
@@ -163,20 +163,70 @@
 						Cada obra se desarrolla por capas para mantener lectura visual clara
 						desde cualquier angulo.
 					</p>
+					<article class="piece-preview" aria-live="polite">
+						<img
+							id="piece-preview-image"
+							src="assets/dragon.png"
+							alt="Ryu no Kokyu: dragon, nubes y truenos"
+						/>
+						<div class="piece-preview-copy">
+							<h3 id="piece-preview-title">Ryu no Kokyu</h3>
+							<p id="piece-preview-description">
+								Body suit parcial con dragon, nubes y truenos.
+							</p>
+							<p id="piece-preview-meta" class="piece-meta">Duracion: 7 sesiones</p>
+						</div>
+					</article>
 					<div class="pieces-grid">
-						<article class="piece-card featured">
+						<article
+							class="piece-card featured is-active"
+							role="button"
+							tabindex="0"
+							aria-pressed="true"
+							data-image="assets/dragon.png"
+							data-alt="Ryu no Kokyu: dragon, nubes y truenos"
+						>
+							<img
+								class="piece-thumb"
+								src="assets/dragon.png"
+								alt="Miniatura de Ryu no Kokyu"
+							/>
 							<h3>Ryu no Kokyu</h3>
 							<p>Body suit parcial con dragon, nubes y truenos.</p>
 							<span>Duracion: 7 sesiones</span>
 						</article>
-						<article class="piece-card">
+						<article
+							class="piece-card"
+							role="button"
+							tabindex="0"
+							aria-pressed="false"
+							data-image="assets/pez koi.png"
+							data-alt="Koi to Nami: doble koi y olas en movimiento"
+						>
+							<img
+								class="piece-thumb"
+								src="assets/pez koi.png"
+								alt="Miniatura de Koi to Nami"
+							/>
 							<h3>Koi to Nami</h3>
 							<p>Manga completa con doble koi y olas en movimiento.</p>
 							<span>Duracion: 5 sesiones</span>
 						</article>
-						<article class="piece-card">
-							<h3>Tora no Michi</h3>
-							<p>Pecho y hombro con tigre, bambu y fondo de viento.</p>
+						<article
+							class="piece-card"
+							role="button"
+							tabindex="0"
+							aria-pressed="false"
+							data-image="assets/hannya.png"
+							data-alt="Hannya no Yoru: mascara hannya y peonias"
+						>
+							<img
+								class="piece-thumb"
+								src="assets/hannya.png"
+								alt="Miniatura de Hannya no Yoru"
+							/>
+							<h3>Hannya no Yoru</h3>
+							<p>Antebrazo con mascara hannya y peonias tradicionales.</p>
 							<span>Duracion: 4 sesiones</span>
 						</article>
 					</div>
@@ -235,18 +285,25 @@
 						required
 					></textarea>
 
-					<label for="fecha">Semana estimada</label>
-					<input id="fecha" name="fecha" type="week" required />
+					<label for="fecha">Fecha exacta</label>
+					<input id="fecha" name="fecha" type="date" required />
+					<p id="schedule-day-hint" class="booking-hint">
+						Selecciona primero una fecha para habilitar horarios de ese dia.
+					</p>
 
 					<label for="horario">Horario seleccionado</label>
-					<input
-						id="horario"
-						name="horario"
-						type="text"
-						placeholder="Elige un bloque en 'Ver horarios disponibles'"
-						readonly
-						required
-					/>
+					<select id="horario" name="horario" required>
+						<option value="" selected disabled>Selecciona un horario</option>
+						<option value="Miercoles - 11:30">Miercoles - 11:30</option>
+						<option value="Miercoles - 15:00">Miercoles - 15:00</option>
+						<option value="Miercoles - 18:30">Miercoles - 18:30</option>
+						<option value="Jueves - 12:00">Jueves - 12:00</option>
+						<option value="Jueves - 16:30">Jueves - 16:30</option>
+						<option value="Jueves - 19:00">Jueves - 19:00</option>
+						<option value="Sabado - 10:00">Sabado - 10:00</option>
+						<option value="Sabado - 12:30">Sabado - 12:30</option>
+						<option value="Sabado - 14:30">Sabado - 14:30</option>
+					</select>
 
 					<button class="btn btn-primary" type="submit">Enviar reserva</button>
 					<p id="booking-confirmation" class="booking-confirmation" role="status" aria-live="polite" hidden>
@@ -277,64 +334,174 @@
 					Selecciona el bloque que mejor se adapte a tu agenda para la consulta.
 				</p>
 				<div class="schedule-grid" role="list" aria-label="Bloques de horarios">
-					<article class="schedule-card" role="listitem">
+					<article class="schedule-card" role="listitem" data-day="3">
 						<h3>Miercoles</h3>
 						<p>11:30 · 15:00 · 18:30</p>
-						<button class="slot-btn" type="button" data-slot="Miercoles - 11:30">
+						<button class="slot-btn" type="button" data-day="3" data-slot="Miercoles - 11:30">
 							Seleccionar 11:30
 						</button>
-						<button class="slot-btn" type="button" data-slot="Miercoles - 15:00">
+						<button class="slot-btn" type="button" data-day="3" data-slot="Miercoles - 15:00">
 							Seleccionar 15:00
 						</button>
-						<button class="slot-btn" type="button" data-slot="Miercoles - 18:30">
+						<button class="slot-btn" type="button" data-day="3" data-slot="Miercoles - 18:30">
 							Seleccionar 18:30
 						</button>
 					</article>
-					<article class="schedule-card" role="listitem">
+					<article class="schedule-card" role="listitem" data-day="4">
 						<h3>Jueves</h3>
 						<p>12:00 · 16:30 · 19:00</p>
-						<button class="slot-btn" type="button" data-slot="Jueves - 12:00">
+						<button class="slot-btn" type="button" data-day="4" data-slot="Jueves - 12:00">
 							Seleccionar 12:00
 						</button>
-						<button class="slot-btn" type="button" data-slot="Jueves - 16:30">
+						<button class="slot-btn" type="button" data-day="4" data-slot="Jueves - 16:30">
 							Seleccionar 16:30
 						</button>
-						<button class="slot-btn" type="button" data-slot="Jueves - 19:00">
+						<button class="slot-btn" type="button" data-day="4" data-slot="Jueves - 19:00">
 							Seleccionar 19:00
 						</button>
 					</article>
-					<article class="schedule-card" role="listitem">
+					<article class="schedule-card" role="listitem" data-day="6">
 						<h3>Sabado</h3>
 						<p>10:00 · 12:30 · 14:30</p>
-						<button class="slot-btn" type="button" data-slot="Sabado - 10:00">
+						<button class="slot-btn" type="button" data-day="6" data-slot="Sabado - 10:00">
 							Seleccionar 10:00
 						</button>
-						<button class="slot-btn" type="button" data-slot="Sabado - 12:30">
+						<button class="slot-btn" type="button" data-day="6" data-slot="Sabado - 12:30">
 							Seleccionar 12:30
 						</button>
-						<button class="slot-btn" type="button" data-slot="Sabado - 14:30">
+						<button class="slot-btn" type="button" data-day="6" data-slot="Sabado - 14:30">
 							Seleccionar 14:30
 						</button>
 					</article>
 				</div>
+				<p id="modal-day-hint" class="modal-hint" role="status" aria-live="polite">
+					Elige una fecha para habilitar los horarios del dia correspondiente.
+				</p>
 				<a class="btn btn-primary" href="#contacto">Cerrar</a>
 			</div>
 		</section>
 
 		<script>
 			const bookingForm = document.querySelector('.booking-form');
+			const dateInput = document.getElementById('fecha');
 			const scheduleButtons = document.querySelectorAll('.slot-btn');
+			const scheduleCards = document.querySelectorAll('.schedule-card');
 			const scheduleInput = document.getElementById('horario');
+			const scheduleHint = document.getElementById('schedule-day-hint');
+			const modalDayHint = document.getElementById('modal-day-hint');
 			const confirmation = document.getElementById('booking-confirmation');
+			const pieceCards = document.querySelectorAll('.piece-card');
+			const piecePreviewImage = document.getElementById('piece-preview-image');
+			const piecePreviewTitle = document.getElementById('piece-preview-title');
+			const piecePreviewDescription = document.getElementById('piece-preview-description');
+			const piecePreviewMeta = document.getElementById('piece-preview-meta');
+
+			const scheduleByDay = {
+				3: ['Miercoles - 11:30', 'Miercoles - 15:00', 'Miercoles - 18:30'],
+				4: ['Jueves - 12:00', 'Jueves - 16:30', 'Jueves - 19:00'],
+				6: ['Sabado - 10:00', 'Sabado - 12:30', 'Sabado - 14:30']
+			};
+
+			function updateScheduleOptions(dayIndex) {
+				scheduleInput.innerHTML = '<option value="" selected disabled>Selecciona un horario</option>';
+
+				const daySlots = scheduleByDay[dayIndex] || [];
+				daySlots.forEach((slot) => {
+					const option = document.createElement('option');
+					option.value = slot;
+					option.textContent = slot;
+					scheduleInput.appendChild(option);
+				});
+			}
+
+			function updateScheduleAvailability() {
+				const selectedDate = dateInput.value;
+				if (!selectedDate) {
+					updateScheduleOptions(null);
+					scheduleButtons.forEach((button) => {
+						button.disabled = true;
+						button.classList.remove('is-selected');
+					});
+					scheduleCards.forEach((card) => card.classList.remove('is-available'));
+					scheduleHint.textContent =
+						'Selecciona primero una fecha para habilitar horarios de ese dia.';
+					modalDayHint.textContent =
+						'Elige una fecha para habilitar los horarios del dia correspondiente.';
+					return;
+				}
+
+				const dayIndex = new Date(`${selectedDate}T00:00:00`).getDay();
+				updateScheduleOptions(dayIndex);
+				scheduleButtons.forEach((button) => {
+					const isMatch = Number(button.dataset.day) === dayIndex;
+					button.disabled = !isMatch;
+					if (!isMatch) {
+						button.classList.remove('is-selected');
+					}
+				});
+
+				scheduleCards.forEach((card) => {
+					const isMatch = Number(card.dataset.day) === dayIndex;
+					card.classList.toggle('is-available', isMatch);
+					card.classList.toggle('is-muted', !isMatch);
+				});
+
+				if (scheduleByDay[dayIndex]) {
+					scheduleHint.textContent = 'Dia valido: selecciona uno de los horarios disponibles.';
+					modalDayHint.textContent =
+						'Solo estan activos los horarios para la fecha que elegiste.';
+				} else {
+					scheduleHint.textContent =
+						'Ese dia no tiene bloques disponibles. Elige miercoles, jueves o sabado.';
+					modalDayHint.textContent =
+						'No hay horarios para ese dia. Cambia la fecha en el formulario.';
+				}
+			}
+
+			function setActivePiece(card) {
+				pieceCards.forEach((item) => {
+					item.classList.remove('is-active');
+					item.setAttribute('aria-pressed', 'false');
+				});
+				card.classList.add('is-active');
+				card.setAttribute('aria-pressed', 'true');
+
+				const title = card.querySelector('h3').textContent;
+				const description = card.querySelector('p').textContent;
+				const meta = card.querySelector('span').textContent;
+				piecePreviewImage.src = card.dataset.image;
+				piecePreviewImage.alt = card.dataset.alt;
+				piecePreviewTitle.textContent = title;
+				piecePreviewDescription.textContent = description;
+				piecePreviewMeta.textContent = meta;
+			}
 
 			scheduleButtons.forEach((button) => {
 				button.addEventListener('click', () => {
+					if (button.disabled) {
+						return;
+					}
 					scheduleButtons.forEach((btn) => btn.classList.remove('is-selected'));
 					button.classList.add('is-selected');
 					scheduleInput.value = button.dataset.slot;
 					window.location.hash = 'contacto';
 					scheduleInput.focus();
 				});
+			});
+
+			pieceCards.forEach((card) => {
+				card.addEventListener('click', () => setActivePiece(card));
+				card.addEventListener('keydown', (event) => {
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						setActivePiece(card);
+					}
+				});
+			});
+
+			dateInput.addEventListener('change', () => {
+				scheduleButtons.forEach((btn) => btn.classList.remove('is-selected'));
+				updateScheduleAvailability();
 			});
 
 			bookingForm.addEventListener('submit', (event) => {
@@ -346,8 +513,12 @@
 				confirmation.hidden = false;
 				bookingForm.reset();
 				scheduleButtons.forEach((btn) => btn.classList.remove('is-selected'));
-				scheduleInput.value = '';
+				scheduleInput.selectedIndex = 0;
+				updateScheduleAvailability();
 			});
+
+			dateInput.min = new Date().toISOString().split('T')[0];
+			updateScheduleAvailability();
 		</script>
 	</body>
 </html>

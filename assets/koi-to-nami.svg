@@ -1,0 +1,19 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D2233"/>
+      <stop offset="1" stop-color="#2E6C8B"/>
+    </linearGradient>
+    <radialGradient id="sea" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 190) rotate(124) scale(430 310)">
+      <stop stop-color="#A4EAFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#A4EAFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <rect width="1200" height="900" fill="url(#sea)"/>
+  <path d="M88 612C279 580 451 651 610 752C780 860 952 845 1122 702" stroke="#D5F2FF" stroke-width="18" stroke-linecap="round"/>
+  <ellipse cx="498" cy="430" rx="215" ry="114" fill="#F47D46" fill-opacity="0.9"/>
+  <ellipse cx="740" cy="500" rx="172" ry="92" fill="#E76A38" fill-opacity="0.85"/>
+  <path d="M318 435C408 390 542 385 680 438" stroke="#FCEADB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M615 505C682 467 778 465 864 504" stroke="#FCEADB" stroke-width="16" stroke-linecap="round"/>
+</svg>
