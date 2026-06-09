@@ -27,9 +27,9 @@
 				"priceRange": "$$$",
 				"address": {
 					"@type": "PostalAddress",
-					"streetAddress": "Calle 9 #18-24",
-					"addressLocality": "Bogota",
-					"addressCountry": "CO"
+					"streetAddress": "Av. Francisco de Miranda",
+					"addressLocality": "Caracas",
+					"addressCountry": "VE"
 				},
 				"openingHoursSpecification": [
 					{
@@ -102,18 +102,33 @@
 					>
 						<h2 class="sr-only">Galeria destacada</h2>
 						<article class="slide s1" aria-label="Dragon de viento sobre espalda completa">
+							<img
+								class="slide-image"
+								src="assets/dragon-viento.svg"
+								alt="Ilustracion de tattoo estilo dragon japones en movimiento"
+							/>
 							<div class="slide-content">
 								<h3>Dragon de Viento</h3>
 								<p>Espalda completa · Sombras en grises y rojo vermellon.</p>
 							</div>
 						</article>
 						<article class="slide s2" aria-label="Koi ascendente sobre media manga">
+							<img
+								class="slide-image"
+								src="assets/koi-ascendente.svg"
+								alt="Ilustracion de tattoo koi ascendente entre olas"
+							/>
 							<div class="slide-content">
 								<h3>Koi Ascendente</h3>
 								<p>Media manga · Contraste entre agua, escamas y flor de loto.</p>
 							</div>
 						</article>
 						<article class="slide s3" aria-label="Mascara hannya con peonias en antebrazo">
+							<img
+								class="slide-image"
+								src="assets/hannya-peonias.svg"
+								alt="Ilustracion de tattoo mascara hannya con peonias tradicionales"
+							/>
 							<div class="slide-content">
 								<h3>Hannya &amp; Peonias</h3>
 								<p>Antebrazo · Linea firme y composicion dramatica.</p>
@@ -174,7 +189,7 @@
 					<ol class="timeline">
 						<li>
 							<h3>1. Consulta creativa</h3>
-							<p>Definimos simbolos, zona del cuerpo y escala de la pieza.</p>
+							<p>Definimos simbolos, estilo narrativo y escala de la pieza.</p>
 						</li>
 						<li>
 							<h3>2. Boceto y adaptacion</h3>
@@ -187,6 +202,7 @@
 					</ol>
 				</div>
 			</section>
+
 		</main>
 
 		<footer id="contacto" class="site-footer" aria-labelledby="contacto-title">
@@ -194,16 +210,144 @@
 				<section>
 					<h2 id="contacto-title">Reserva tu consulta</h2>
 					<p>
-						Escribe con idea, zona a tatuar y referencias visuales para cotizar
-						tiempo y enfoque.
+						Escribe con tu idea, referencias visuales y disponibilidad para
+						recibir una propuesta de sesiones.
 					</p>
+					<a
+						class="btn btn-secondary btn-availability"
+						href="#modal-horarios"
+						aria-controls="modal-horarios"
+						>Ver horarios disponibles</a
+					>
 				</section>
+				<form class="booking-form" action="#" method="post" aria-label="Formulario de reserva">
+					<label for="nombre">Nombre completo</label>
+					<input id="nombre" name="nombre" type="text" autocomplete="name" required />
+
+					<label for="email">Correo electronico</label>
+					<input id="email" name="email" type="email" autocomplete="email" required />
+
+					<label for="proyecto">Idea del tatuaje</label>
+					<textarea
+						id="proyecto"
+						name="proyecto"
+						rows="4"
+						required
+					></textarea>
+
+					<label for="fecha">Semana estimada</label>
+					<input id="fecha" name="fecha" type="week" required />
+
+					<label for="horario">Horario seleccionado</label>
+					<input
+						id="horario"
+						name="horario"
+						type="text"
+						placeholder="Elige un bloque en 'Ver horarios disponibles'"
+						readonly
+						required
+					/>
+
+					<button class="btn btn-primary" type="submit">Enviar reserva</button>
+					<p id="booking-confirmation" class="booking-confirmation" role="status" aria-live="polite" hidden>
+						Tu reserva fue enviada correctamente. Te contactaremos pronto.
+					</p>
+				</form>
+			</div>
+			<div class="container contact-mini">
 				<address>
-					<p><strong>Ubicacion:</strong> Calle 9 #18-24, Bogota</p>
+					<p><strong>Ubicacion:</strong> Caracas, Venezuela</p>
 					<p><strong>Telefono:</strong> +57 300 555 1212</p>
 					<p><strong>Email:</strong> hola@koinosumi.example</p>
 				</address>
 			</div>
 		</footer>
+
+		<section
+			id="modal-horarios"
+			class="modal"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="modal-horarios-title"
+		>
+			<a class="modal-overlay" href="#contacto" aria-label="Cerrar horarios disponibles"></a>
+			<div class="modal-card">
+				<h2 id="modal-horarios-title">Horarios disponibles</h2>
+				<p class="section-intro">
+					Selecciona el bloque que mejor se adapte a tu agenda para la consulta.
+				</p>
+				<div class="schedule-grid" role="list" aria-label="Bloques de horarios">
+					<article class="schedule-card" role="listitem">
+						<h3>Miercoles</h3>
+						<p>11:30 · 15:00 · 18:30</p>
+						<button class="slot-btn" type="button" data-slot="Miercoles - 11:30">
+							Seleccionar 11:30
+						</button>
+						<button class="slot-btn" type="button" data-slot="Miercoles - 15:00">
+							Seleccionar 15:00
+						</button>
+						<button class="slot-btn" type="button" data-slot="Miercoles - 18:30">
+							Seleccionar 18:30
+						</button>
+					</article>
+					<article class="schedule-card" role="listitem">
+						<h3>Jueves</h3>
+						<p>12:00 · 16:30 · 19:00</p>
+						<button class="slot-btn" type="button" data-slot="Jueves - 12:00">
+							Seleccionar 12:00
+						</button>
+						<button class="slot-btn" type="button" data-slot="Jueves - 16:30">
+							Seleccionar 16:30
+						</button>
+						<button class="slot-btn" type="button" data-slot="Jueves - 19:00">
+							Seleccionar 19:00
+						</button>
+					</article>
+					<article class="schedule-card" role="listitem">
+						<h3>Sabado</h3>
+						<p>10:00 · 12:30 · 14:30</p>
+						<button class="slot-btn" type="button" data-slot="Sabado - 10:00">
+							Seleccionar 10:00
+						</button>
+						<button class="slot-btn" type="button" data-slot="Sabado - 12:30">
+							Seleccionar 12:30
+						</button>
+						<button class="slot-btn" type="button" data-slot="Sabado - 14:30">
+							Seleccionar 14:30
+						</button>
+					</article>
+				</div>
+				<a class="btn btn-primary" href="#contacto">Cerrar</a>
+			</div>
+		</section>
+
+		<script>
+			const bookingForm = document.querySelector('.booking-form');
+			const scheduleButtons = document.querySelectorAll('.slot-btn');
+			const scheduleInput = document.getElementById('horario');
+			const confirmation = document.getElementById('booking-confirmation');
+
+			scheduleButtons.forEach((button) => {
+				button.addEventListener('click', () => {
+					scheduleButtons.forEach((btn) => btn.classList.remove('is-selected'));
+					button.classList.add('is-selected');
+					scheduleInput.value = button.dataset.slot;
+					window.location.hash = 'contacto';
+					scheduleInput.focus();
+				});
+			});
+
+			bookingForm.addEventListener('submit', (event) => {
+				event.preventDefault();
+				if (!bookingForm.reportValidity()) {
+					return;
+				}
+
+				confirmation.hidden = false;
+				bookingForm.reset();
+				scheduleButtons.forEach((btn) => btn.classList.remove('is-selected'));
+				scheduleInput.value = '';
+			});
+		</script>
 	</body>
 </html>

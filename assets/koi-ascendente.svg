@@ -1,0 +1,22 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2737"/>
+      <stop offset="1" stop-color="#2F6F8E"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(880 190) rotate(120) scale(390 280)">
+      <stop stop-color="#A9E5FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#A9E5FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <rect width="1200" height="900" fill="url(#moon)"/>
+  <path d="M90 600C265 575 445 658 590 754C760 865 925 851 1115 700" stroke="#CDEEFE" stroke-opacity="0.9" stroke-width="18" stroke-linecap="round"/>
+  <path d="M130 540C350 530 505 590 650 690C760 765 940 770 1115 640" stroke="#173E54" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="520" cy="430" rx="240" ry="125" fill="#F47A44" fill-opacity="0.85"/>
+  <path d="M320 435C405 385 550 373 690 436" stroke="#FCEADB" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="680" cy="425" r="14" fill="#1B1211"/>
+  <circle cx="406" cy="415" r="16" fill="#F9D7B8"/>
+  <circle cx="446" cy="395" r="16" fill="#F9D7B8"/>
+  <circle cx="486" cy="405" r="16" fill="#F9D7B8"/>
+</svg>
