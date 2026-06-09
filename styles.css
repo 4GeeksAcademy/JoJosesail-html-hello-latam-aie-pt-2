@@ -1,13 +1,13 @@
 :root {
-	--bg: #f3eee4;
-	--bg-soft: #e7dcc9;
-	--ink: #17130f;
-	--ink-soft: #4a4036;
-	--accent: #b23a2a;
-	--accent-dark: #7d1f17;
-	--panel: #fffdf8;
-	--stroke: #d6c6ad;
-	--shadow: 0 20px 45px rgba(58, 44, 31, 0.18);
+	--bg: #ece0bf;
+	--bg-soft: #d2bc8e;
+	--ink: #100a07;
+	--ink-soft: #31261f;
+	--accent: #c1121f;
+	--accent-dark: #7f0b14;
+	--panel: #fff7e8;
+	--stroke: #9f7d4a;
+	--shadow: 0 22px 46px rgba(24, 16, 11, 0.3);
 }
 
 * {
@@ -24,9 +24,9 @@ body {
 	font-family: "Manrope", sans-serif;
 	color: var(--ink);
 	background:
-		radial-gradient(circle at 15% 10%, rgba(178, 58, 42, 0.18), transparent 35%),
-		radial-gradient(circle at 85% 20%, rgba(35, 26, 20, 0.16), transparent 30%),
-		linear-gradient(180deg, var(--bg) 0%, #f8f2e8 50%, var(--bg-soft) 100%);
+		radial-gradient(circle at 12% 10%, rgba(193, 18, 31, 0.28), transparent 35%),
+		radial-gradient(circle at 82% 18%, rgba(28, 44, 74, 0.24), transparent 32%),
+		linear-gradient(180deg, var(--bg) 0%, #f3e4c3 52%, var(--bg-soft) 100%);
 	line-height: 1.6;
 }
 
@@ -99,8 +99,8 @@ body {
 	top: 0;
 	z-index: 20;
 	backdrop-filter: blur(8px);
-	background: rgba(243, 238, 228, 0.8);
-	border-bottom: 1px solid rgba(125, 31, 23, 0.18);
+	background: rgba(236, 224, 191, 0.94);
+	border-bottom: 1px solid rgba(127, 11, 20, 0.35);
 }
 
 .nav-wrap {
@@ -119,17 +119,13 @@ body {
 	text-decoration: none;
 }
 
-.brand-mark {
-	display: inline-grid;
-	place-items: center;
-	width: 2.5rem;
-	height: 2.5rem;
+.brand-logo {
+	width: 2.8rem;
+	height: 2.8rem;
+	object-fit: cover;
 	border-radius: 50%;
-	background: var(--ink);
-	color: #f6e9d7;
-	font-family: "Cinzel", serif;
-	font-size: 0.75rem;
-	letter-spacing: 0.08em;
+	border: 2px solid rgba(193, 18, 31, 0.52);
+	box-shadow: 0 8px 16px rgba(16, 10, 7, 0.25);
 }
 
 .brand-text {
@@ -157,7 +153,7 @@ body {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-	background: rgba(178, 58, 42, 0.12);
+	background: rgba(193, 18, 31, 0.16);
 	color: var(--ink);
 }
 
@@ -243,11 +239,11 @@ h1 {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-	background: #992d1f;
+	background: #9c0f1a;
 }
 
 .btn-secondary {
-	border-color: rgba(23, 19, 15, 0.25);
+	border-color: rgba(16, 10, 7, 0.4);
 	color: var(--ink);
 }
 
@@ -353,7 +349,7 @@ h1 {
 
 .section-alt {
 	background:
-		linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.75));
+		linear-gradient(180deg, rgba(255, 247, 232, 0.5), rgba(255, 241, 214, 0.84));
 	border-top: 1px solid var(--stroke);
 	border-bottom: 1px solid var(--stroke);
 }
@@ -585,8 +581,8 @@ h1 {
 
 .site-footer {
 	padding: 2.6rem 0 3rem;
-	background: #211914;
-	color: #f5ead8;
+	background: linear-gradient(145deg, #170d0b, #2e0f11);
+	color: #f8ecd4;
 }
 
 .footer-grid {
