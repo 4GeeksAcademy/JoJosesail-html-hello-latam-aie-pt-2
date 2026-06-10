@@ -22,44 +22,141 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "TattooParlor",
-				"name": "Koi No Sumi",
-				"description": "Estudio de tatuaje artistico especializado en estilo oriental japones (irezumi).",
-				"url": "https://koinosumi.example",
-				"image": "https://koinosumi.example/og-cover.jpg",
-				"telephone": "+58-0414-123-1212",
-				"priceRange": "$$$",
-				"address": {
-					"@type": "PostalAddress",
-					"streetAddress": "Av. Francisco de Miranda",
-					"addressLocality": "Caracas",
-					"addressCountry": "VE"
-				},
-				"openingHoursSpecification": [
+				"@graph": [
 					{
-						"@type": "OpeningHoursSpecification",
-						"dayOfWeek": [
-							"Monday",
-							"Tuesday",
-							"Wednesday",
-							"Thursday",
-							"Friday"
+						"@type": "TattooParlor",
+						"@id": "https://koinosumi.example/#studio",
+						"name": "Koi No Sumi",
+						"description": "Estudio de tatuaje artistico especializado en estilo oriental japones (irezumi).",
+						"url": "https://koinosumi.example",
+						"image": "https://koinosumi.example/og-cover.jpg",
+						"telephone": "+58-0414-123-1212",
+						"priceRange": "$$$",
+						"address": {
+							"@type": "PostalAddress",
+							"streetAddress": "Av. Francisco de Miranda",
+							"addressLocality": "Caracas",
+							"addressCountry": "VE"
+						},
+						"openingHoursSpecification": [
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": [
+									"Monday",
+									"Tuesday",
+									"Wednesday",
+									"Thursday",
+									"Friday"
+								],
+								"opens": "11:00",
+								"closes": "19:00"
+							},
+							{
+								"@type": "OpeningHoursSpecification",
+								"dayOfWeek": "Saturday",
+								"opens": "10:00",
+								"closes": "16:00"
+							}
 						],
-						"opens": "11:00",
-						"closes": "19:00"
+						"sameAs": [
+							"https://instagram.com/koinosumi",
+							"https://www.behance.net/koinosumi"
+						],
+						"areaServed": "Latam",
+						"employee": {
+							"@id": "https://koinosumi.example/#artist"
+						},
+						"hasOfferCatalog": {
+							"@id": "https://koinosumi.example/#catalog"
+						}
 					},
 					{
-						"@type": "OpeningHoursSpecification",
-						"dayOfWeek": "Saturday",
-						"opens": "10:00",
-						"closes": "16:00"
+						"@type": "Person",
+						"@id": "https://koinosumi.example/#artist",
+						"name": "Koi No Sumi Artist",
+						"jobTitle": "Tattoo Artist",
+						"description": "Artista de tatuaje especializado en irezumi y composicion oriental japonesa de gran formato.",
+						"worksFor": {
+							"@id": "https://koinosumi.example/#studio"
+						},
+						"knowsAbout": [
+							"Irezumi",
+							"Oriental Japanese Tattoo",
+							"Dragon",
+							"Koi",
+							"Hannya",
+							"Sakura"
+						],
+						"sameAs": [
+							"https://instagram.com/koinosumi",
+							"https://www.behance.net/koinosumi"
+						]
+					},
+					{
+						"@type": "OfferCatalog",
+						"@id": "https://koinosumi.example/#catalog",
+						"name": "Servicios de tatuaje",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Consulta creativa",
+									"serviceType": "Tattoo consultation"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Manga oriental japonesa",
+									"serviceType": "Japanese sleeve tattoo"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Pieza de gran formato",
+									"serviceType": "Large scale irezumi tattoo"
+								}
+							}
+						]
+					},
+					{
+						"@type": "VisualArtwork",
+						"@id": "https://koinosumi.example/#artwork-ryu",
+						"name": "Ryu no Kokyu",
+						"artform": "Tattoo",
+						"genre": "Japanese traditional",
+						"description": "Body suit parcial con dragon, nubes y truenos.",
+						"creator": {
+							"@id": "https://koinosumi.example/#artist"
+						}
+					},
+					{
+						"@type": "VisualArtwork",
+						"@id": "https://koinosumi.example/#artwork-koi",
+						"name": "Koi to Nami",
+						"artform": "Tattoo",
+						"genre": "Japanese traditional",
+						"description": "Manga completa con doble koi y olas en movimiento.",
+						"creator": {
+							"@id": "https://koinosumi.example/#artist"
+						}
+					},
+					{
+						"@type": "VisualArtwork",
+						"@id": "https://koinosumi.example/#artwork-hannya",
+						"name": "Hannya no Yoru",
+						"artform": "Tattoo",
+						"genre": "Japanese traditional",
+						"description": "Antebrazo con mascara hannya y peonias tradicionales.",
+						"creator": {
+							"@id": "https://koinosumi.example/#artist"
+						}
 					}
-				],
-				"sameAs": [
-					"https://instagram.com/koinosumi",
-					"https://www.behance.net/koinosumi"
-				],
-				"areaServed": "Latam"
+				]
 			}
 		</script>
 	</head>
